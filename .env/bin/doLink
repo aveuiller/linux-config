@@ -1,0 +1,2 @@
+ln -s $SOFTDIR/eg/eg/eg_exec.py eg
+ln -s $SOFTDIR/something yay

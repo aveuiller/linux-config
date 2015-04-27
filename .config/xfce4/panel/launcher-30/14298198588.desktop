@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Nemo
+Name[fr]=Nemo
+Comment=Access and organize files
+Comment[fr]=Accéder aux fichiers et les organiser
+Exec=nemo %U
+Icon=folder
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=GNOME;GTK;Utility;Core;
+MimeType=inode/directory;application/x-gnome-saved-search;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=nemo
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=2.4.5
+X-XFCE-Source=file:///usr/share/applications/nemo.desktop
