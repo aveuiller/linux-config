@@ -2,9 +2,10 @@
 export SOFTDIR=$HOME/Software
 
 export JAVA_HOME="/usr/lib/jvm/default"
-
+export ANDROID_HOME="$SOFTDIR/android-sdk-linux"
 export PATH="$PATH:$HOME/.env/bin"
 export PATH="$PATH:$JAVA_HOME/bin"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 ### Aliase:
 alias musicplayer="mps"
