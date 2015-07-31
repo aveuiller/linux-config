@@ -46,6 +46,7 @@
         <value type="string" value="applet networkmanager"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="qbittorrent"/>
+        <value type="string" value="nemo"/>
       </property>
     </property>
     <property name="plugin-16" type="string" value="mixer">
