@@ -10,13 +10,10 @@ softDir="$dir_prefix/Software"
 customBinDir="$dir_prefix/.env/bin"
 
 function execInFolder {
-    export OLDPWD=`pwd`
-    dir=$1
-    script=$2
-    cd $dir;
-    echo `pwd`
+    dir=$1; script=$2
+    cd $dir; echo Accessing `pwd`
     sh ./$script;
-    cd -
+    cd -; echo Back to `pwd`
 }
 
 execInFolder $softDir "doClone"
