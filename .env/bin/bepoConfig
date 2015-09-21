@@ -1,0 +1,7 @@
+#!/bin/bash
+
+I3_DIR=~/.i3
+
+setxkbmap fr bepo
+cp $I3_DIR/config-bepo $I3_DIR/config
+
