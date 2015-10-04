@@ -62,7 +62,7 @@ status.register("network",
 # like quality and network names.
 #
 # Note: requires both netifaces and basiciw
-status.register("wireless",
+status.register("network",
     interface="wlp5s0",
     format_up="{essid} {v4cidr} {quality:03.0f}%",)
 
