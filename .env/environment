@@ -1,9 +1,10 @@
 ### Environment Vars:
 export SOFTDIR=$HOME/Software
+export ENVDIR=$HOME/.env
 
 export JAVA_HOME="/usr/lib/jvm/default"
 export ANDROID_HOME="$SOFTDIR/android-sdk-linux"
-export PATH="$PATH:$HOME/.env/bin"
+export PATH="$PATH:$ENVDIR/bin"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
