@@ -37,7 +37,7 @@ workspace $4 output $mainWindow
 workspace $5 output $secondWindow
 
 assign [class="^Firefox$"] →  $1 
-assign [class="^chromium-browser$"] →  $1 
+assign [class="^chromium$"] →  $1 
 assign [class="gnome-terminal"] →  $2 
 assign [instance="^HipChat$"] →  $3
 assign [class="^Thunderbird$"] →  $3
@@ -71,7 +71,7 @@ font pango:DejaVu Sans Mono 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier $od
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -89,10 +89,10 @@ bindsym $mod+d exec ~/.i3/dmenu_run_aliases
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+i focus up
-bindsym $mod+l focus right
+bindsym $mod+s focus left
+bindsym $mod+r focus down
+bindsym $mod+l focus up
+bindsym $mod+n focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -101,10 +101,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+s move left
+bindsym $mod+Shift+r move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+n move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -123,8 +123,8 @@ bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+a layout stacking
-bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+u layout tabbed
+bindsym $mod+i layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -139,28 +139,28 @@ bindsym $mod+q focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace $1
-bindsym $mod+eacute workspace $2
-bindsym $mod+quotedbl workspace $3
-bindsym $mod+apostrophe workspace $4
-bindsym $mod+parenleft workspace $5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+1 workspace $1
+bindsym $mod+2 workspace $2
+bindsym $mod+3 workspace $3
+bindsym $mod+4 workspace $4
+bindsym $mod+5 workspace $5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace $1
-bindsym $mod+Shift+eacute move container to workspace $2
-bindsym $mod+Shift+quotedbl move container to workspace $3
-bindsym $mod+Shift+apostrophe move container to workspace $4
+bindsym $mod+Shift+1 move container to workspace $1
+bindsym $mod+Shift+2 move container to workspace $2
+bindsym $mod+Shift+3 move container to workspace $3
+bindsym $mod+Shift+4 move container to workspace $4
 bindsym $mod+Shift+5 move container to workspace $5
-bindsym $mod+Shift+minus move container to workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7
-bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -180,10 +180,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
+        bindsym s resize shrink width 10 px or 10 ppt
+        bindsym r resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
+        bindsym n resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
