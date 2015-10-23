@@ -8,9 +8,11 @@ export PATH="$PATH:$ENVDIR/bin"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
-### Aliase:
-alias musicplayer="mps"
+# Virtualenv wrapper (require python-virtualenvwrapper)
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 
+### Aliase:
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
