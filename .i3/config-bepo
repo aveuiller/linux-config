@@ -25,7 +25,7 @@ set $4 "5:Misc"
 set $5 "3:Work"  
 
 ## Windows binding
-set $mainWindow "LVDS-0"
+set $mainWindow "LVDS"
 set $secondWindow "VGA-0"
 exec xrandr --output $mainWindow --mode 1600x900
 exec xrandr --output $secondWindow --auto --left-of $mainWindow
