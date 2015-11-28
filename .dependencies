@@ -1,0 +1,10 @@
+zsh 
+emacs 
+firefox chromium
+i3 dmenu dzen2 feh 
+lightdm lightdm-gtk-greeter arandr
+xfce4-terminal ttf-fira-mono ttf-inconsolata
+zip unzip sudo
+networkmanager network-manager-applet net-tools
+python-pip python-dbus python-virtualenv python-virtualenvwrapper
+texlive-most

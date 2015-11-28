@@ -18,3 +18,10 @@ function execInFolder {
 
 execInFolder $softDir "doClone"
 execInFolder $customBinDir "doLink"
+
+#Install defined dependencies
+sudo pacman-key --refresh-key
+sudo pacman -Syu $(cat .dependencies) 
+# Change interpreter
+chsh -s /usr/bin/zsh antoine
+sudo pip install i3pystatus netifaces colour i3-py basiciw
