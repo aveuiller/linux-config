@@ -27,13 +27,15 @@ set $5 "3:Work"
 ## Windows binding
 set $mainWindow "DP-3"
 set $secondWindow "VGA-0"
+set $thirdWindow "DP-0"
 exec xrandr --output $mainWindow --auto
-exec xrandr --output $secondWindow --auto --left-of $mainWindow
+exec xrandr --output $thirdWindow --auto --left-of $mainWindow --rotate left # Docs & misc
+exec xrandr --output $secondWindow --auto --left-of $thirdWindow # IDEs
 
 workspace $1 output $mainWindow
 workspace $2 output $mainWindow
 workspace $3 output $mainWindow
-workspace $4 output $mainWindow
+workspace $4 output $thirdWindow
 workspace $5 output $secondWindow
 
 assign [class="^Firefox$"] →  $1 
