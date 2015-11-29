@@ -1,7 +1,7 @@
 zsh 
 emacs scrot evince
 firefox chromium
-i3 dmenu dzen2 feh 
+i3 dmenu dzen2 feh nemo
 lightdm lightdm-gtk-greeter arandr
 pulseaudio-alsa alsa-utils 
 xfce4-terminal ttf-fira-mono ttf-inconsolata

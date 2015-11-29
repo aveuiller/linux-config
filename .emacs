@@ -8,6 +8,13 @@
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+(global-unset-key (kbd "C-z")) ; Remove sleep binding
+
+; Indentation
+(setq-default indent-tabs-mode nil)
+(setq standard-indent 4)
+(defvaralias 'c-basic-offset 'tab-width)
+(defvaralias 'cperl-indent-level 'standard-indent)
 
 ; Save backup in specific dir
 (setq make-backup-files t)
@@ -18,7 +25,6 @@
 (setq inhibit-startup-message t)
 (column-number-mode t)
 (global-hl-line-mode 1)
-(setq standard-indent 4)
 (set-face-attribute 'default nil :height 100)
 
 ;;; Modules ;;;
@@ -60,3 +66,18 @@
 ; PHP
 (add-to-list 'load-path "~/.emacs.d/php")
 (require 'php-mode)
+
+; JSon
+(defun json-format ()
+  (interactive)
+  (save-excursion
+    (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)
+    )
+  )
+
+; Markdown
+(autoload 'markdown-mode "~/.emacs.d/markdown-mode.el"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
