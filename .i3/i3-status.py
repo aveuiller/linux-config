@@ -10,17 +10,17 @@ status = Status(standalone=True)
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-    format="%a %-d %b %X KW%V",)
+    format="%a %-d %b %X",)
 
 # Shows pulseaudio default sink volume
 #
 # Note: requires libpulseaudio from PyPI
 status.register("pulseaudio",
-    format="{muted} ♪{volume_bar}{volume}",)
+    format="{muted} ♪ {volume_bar}{volume}",)
 
 # Brightness
 status.register("backlight",
-    format="☀{brightness}/{max_brightness}",)
+    format="☀ {brightness}/{max_brightness}",)
 
 # This would also display a desktop notification (via dbus) if the percentage
 # goes below 5 percent while discharging. The block will also color RED.
@@ -41,11 +41,6 @@ status.register("load")
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
     format="{temp:.0f}°C",)
-
-# Displays whether a DHCP client is running
-status.register("runwatch",
-    name="DHCP",
-    path="/var/run/dhclient*.pid",)
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown
@@ -69,19 +64,19 @@ status.register("network",
 # Shows disk usage of /
 # Format:
 # 42/128G [86G]
-#status.register("disk",
-#    path="/",
-#    format="/ [{avail}G]",)
-#
-#status.register("disk",
-#    path="/home",
-#    format="/home [{avail}G]",)
-#
+status.register("disk",
+    path="/",
+    format="/ [{avail}G]",)
+
+status.register("disk",
+    path="/home",
+    format="/home [{avail}G]",)
+
 
 # Shows mpd status
 # Format:
 # Cloud connected▶Reroute to Remain
-status.register("now_playing",)
+#status.register("now_playing",)
 #    format="{title}{status} {song_elapsed}/{song_length}",
 #    status={
 #        "pause": "▷",
