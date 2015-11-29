@@ -19,8 +19,8 @@ status.register("pulseaudio",
     format="{muted} ♪ {volume_bar}{volume}",)
 
 # Brightness
-status.register("backlight",
-    format="☀ {brightness}/{max_brightness}",)
+#status.register("backlight",
+#    format="☀ {percentage}%",)
 
 # This would also display a desktop notification (via dbus) if the percentage
 # goes below 5 percent while discharging. The block will also color RED.
