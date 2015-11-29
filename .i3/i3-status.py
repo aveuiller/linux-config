@@ -50,7 +50,7 @@ status.register("temp",
 #
 # Note: the network module requires PyPI package netifaces
 status.register("network",
-    interface="enp3s0",
+    interface="enp0s25",
     format_up="{v4cidr}",)
 
 # Has all the options of the normal network and adds some wireless specific things
@@ -58,7 +58,7 @@ status.register("network",
 #
 # Note: requires both netifaces and basiciw
 status.register("network",
-    interface="wlp5s0",
+    interface="wlo1",
     format_up="{essid} {v4cidr} {quality:03.0f}%",)
 
 # Shows disk usage of /

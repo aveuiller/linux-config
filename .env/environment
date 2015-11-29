@@ -41,7 +41,6 @@ alias ffPerso="firefox -p personal -no-remote"
 # Work env setup aliases
 alias android-studio="$IDEDIR/android-studio/bin/studio.sh"
 alias intellij="$IDEDIR/idea-IU-141.2735.5/bin/idea.sh"
-
 alias softWork="firefox & ffPerso & intellij & genymotion & thunderbird & slack &"
 function _work_dev {
     # $1 - project absolute directory
@@ -65,3 +64,6 @@ alias pbpaste='xclip -selection clipboard -o'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Other initializers inclusion
+source $(dirname $0)/jenv.init
