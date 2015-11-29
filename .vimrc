@@ -1,7 +1,7 @@
 " See https://wiki.archlinux.org/index.php/Vim/.vimrc
 set nocompatible
 syntax on
-colorscheme elflord
+colorscheme peachpuff
 set number
 
 " Indentation

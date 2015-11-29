@@ -1,9 +1,32 @@
 ### Environment Vars:
-export SOFTDIR=$HOME/Software
-export ENVDIR=$HOME/.env
+gitlabBaseDir="$HOME/Documents/work/dev/apisense"
 
+## Projects
+function workdir {
+    # $1 - project directory
+    echo $gitlabBaseDir"/"$1
+}
+
+export HIVE_DIR=`workdir "servers/hive"`
+export HONEY_DIR=`workdir "servers/honeycomb"`
+export SDK_DIR=`workdir "sdk/apisense-android-sdk"`
+export BEE_DIR=`workdir "app/bee-android"`
+export DOC_DIR=`workdir "doc/docs.apisense.com"`
+export PRES_DIR="$HOME/Documents/work/writing/SED/presentations/adt-crowdlab-presentation"
+##
+
+export SOFTDIR="$HOME/Software"
+export IDEDIR="$SOFTDIR/IDE"
+export ENVDIR="$HOME/.env"
+# See: http://tools.android.com/knownissues/ibus
+export XMODIFIERS="~/Softwares/IDE/android-studio/bin/studio.sh"
+
+# Homes
 export JAVA_HOME="/usr/lib/jvm/default"
-export ANDROID_HOME="$SOFTDIR/android-sdk-linux"
+export ANDROID_HOME="$SOFTDIR/Android-SDK"
+export SCALA_HOME="$SOFTDIR/scala/default-scala"
+
+# Path
 export PATH="$PATH:$ENVDIR/bin"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
@@ -11,6 +34,26 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # Virtualenv wrapper (require python-virtualenvwrapper)
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
+
+# firefox profiles
+alias ffPerso="firefox -p personal -no-remote"
+
+# Work env setup aliases
+alias android-studio="$IDEDIR/android-studio/bin/studio.sh"
+alias intellij="$IDEDIR/idea-IU-141.2735.5/bin/idea.sh"
+
+alias softWork="firefox & ffPerso & intellij & genymotion & thunderbird & slack &"
+function _work_dev {
+    # $1 - project absolute directory
+    cd $1 && git status
+}
+alias hive="_work_dev $HIVE_DIR"
+alias honeycomb="_work_dev $HONEY_DIR"
+alias sdk="_work_dev $SDK_DIR"
+alias bee="_work_dev $BEE_DIR"
+alias doc="_work_dev $DOC_DIR"
+alias work="cd $gitlabBaseDir && gws"
+alias prez="cd $PRES_DIR"
 
 ### Aliase:
 alias ll='ls -alF'

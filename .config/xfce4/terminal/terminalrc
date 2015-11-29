@@ -17,4 +17,8 @@ MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 FontName=Monospace 10
 ScrollingLines=10000
+BackgroundDarkness=0,470000
+ColorForeground=#000000000000
+ColorBackground=#ffffffffffff
+ColorBackgroundVary=TRUE
 

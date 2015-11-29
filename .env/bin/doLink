@@ -1,1 +1,4 @@
 ln -s $SOFTDIR/eg/eg/eg_exec.py eg
+ln -s $SOFTDIR/gitinspector/gitinspector/gitinspector.py gitinspector
+ln -s $SOFTDIR/jenv/bin/jenv jenv
+ln -s $SOFTDIR/gws/src/gws gws
