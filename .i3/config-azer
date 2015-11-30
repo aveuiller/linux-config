@@ -5,8 +5,9 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # Custom config 
+#font pango:DejaVu Sans Mono 6
+
 ## Startup daemons and softwares
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
@@ -27,10 +28,13 @@ set $5 "3:Work"
 ## Windows binding
 set $mainWindow "DP-3"
 set $secondWindow "VGA-0"
-set $thirdWindow "DP-0"
-exec xrandr --output $mainWindow --auto
-exec xrandr --output $thirdWindow --auto --left-of $mainWindow --rotate left # Docs & misc
-exec xrandr --output $secondWindow --auto --left-of $thirdWindow # IDEs
+set $thirdWindow "DP-2"
+#exec xrandr --output $mainWindow --mode  1920x1080 --primary --pos 0x0
+#exec xrandr --output $thirdWindow --mode 1280x1024 --left-of $mainWindow --rotate left # Docs & misc
+#exec xrandr --output $secondWindow --mode 2048x1152 --left-of $thirdWindow # IDEs
+exec xrandr --output $mainWindow --primary --pos 0x0
+exec xrandr --output $thirdWindow --right-of $mainWindow --rotate left # Docs & misc
+exec xrandr --output $secondWindow --right-of $thirdWindow # IDEs
 
 workspace $1 output $mainWindow
 workspace $2 output $mainWindow
