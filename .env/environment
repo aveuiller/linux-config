@@ -13,6 +13,7 @@ export SDK_DIR=`workdir "sdk/apisense-android-sdk"`
 export BEE_DIR=`workdir "app/bee-android"`
 export DOC_DIR=`workdir "doc/docs.apisense.com"`
 export PRES_DIR="$HOME/Documents/work/writing/SED/presentations/adt-crowdlab-presentation"
+export SERV_DIR="$HOME/Documents/work/adminsys/servers-deployment"
 ##
 
 export SOFTDIR="$HOME/Software"
@@ -51,6 +52,7 @@ alias honeycomb="_work_dev $HONEY_DIR"
 alias sdk="_work_dev $SDK_DIR"
 alias bee="_work_dev $BEE_DIR"
 alias doc="_work_dev $DOC_DIR"
+alias servers="_work_dev $SERV_DIR"
 alias work="cd $gitlabBaseDir && gws"
 alias prez="cd $PRES_DIR"
 
