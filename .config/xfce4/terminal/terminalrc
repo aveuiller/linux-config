@@ -1,7 +1,7 @@
 [Configuration]
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
-MiscBordersDefault=TRUE
+MiscBordersDefault=FALSE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
@@ -15,10 +15,8 @@ MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
-FontName=Monospace 8
-ScrollingLines=10000
-BackgroundDarkness=0,470000
 ColorForeground=#000000000000
 ColorBackground=#ffffffffffff
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+FontName=Monospace 8
 
