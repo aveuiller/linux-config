@@ -3,3 +3,5 @@
 	email = aveuiller@gmail.com
 [push]
 	default = simple
+[core]
+    editor = vi
