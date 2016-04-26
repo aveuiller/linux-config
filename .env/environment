@@ -23,6 +23,7 @@ export ENVDIR="$HOME/.env"
 export XMODIFIERS="~/Softwares/IDE/android-studio/bin/studio.sh"
 
 # Homes
+export JAVA_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxMetaspaceSize=2G -XX:MetaspaceSize=1G -Xms1G -Xmx2G"
 export JAVA_HOME="/usr/lib/jvm/default"
 export ANDROID_HOME="$SOFTDIR/Android-SDK"
 export SCALA_HOME="$SOFTDIR/scala/default-scala"
