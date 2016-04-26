@@ -17,6 +17,5 @@ MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 ColorForeground=#000000000000
 ColorBackground=#ffffffffffff
-BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 FontName=Monospace 8
 
