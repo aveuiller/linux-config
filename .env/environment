@@ -9,6 +9,7 @@ function workdir {
 
 export HIVE_DIR=`workdir "servers/hive"`
 export HONEY_DIR=`workdir "servers/honeycomb"`
+export DASH_DIR=`workdir "servers/dashboard"`
 export SDK_DIR=`workdir "sdk/apisense-android-sdk"`
 export BEE_DIR=`workdir "app/bee-android"`
 export DOC_DIR=`workdir "doc/docs.apisense.com"`
@@ -50,6 +51,7 @@ function _work_dev {
 }
 alias hive="_work_dev $HIVE_DIR"
 alias honeycomb="_work_dev $HONEY_DIR"
+alias dash="_work_dev $DASH_DIR"
 alias sdk="_work_dev $SDK_DIR"
 alias bee="_work_dev $BEE_DIR"
 alias doc="_work_dev $DOC_DIR"
