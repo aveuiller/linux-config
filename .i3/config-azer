@@ -24,14 +24,17 @@ set $4 "5:Misc"
 set $5 "3:Work"  
 
 ## Windows binding
-set $mainWindow "DP-3"
-set $secondWindow "VGA-0"
-set $thirdWindow "DP-2"
-exec xrandr --output $mainWindow --primary --pos 0x0 \
-            --output $thirdWindow --right-of $mainWindow --rotate left \
-            --output $secondWindow --right-of $thirdWindow # IDEs
-# Wait for xrandr to finish startup, then fill with background
-exec --no-startup-id sleep 1 && feh --bg-fill --randomize ~/Pictures/wallpapers/*
+set $mainWindow "eDP1"
+set $secondWindow "VGA1"
+set $thirdWindow "VIRTUAL3"
+
+# Start intel virtual outputs to detect thirg screen,
+# configure screens via xrandr, then fill with background
+exec intel-virtual-output && \
+    xrandr --output $mainWindow --primary --pos 0x0 --auto \
+           --output $thirdWindow --right-of $mainWindow --rotate left --auto\
+           --output $secondWindow --right-of $thirdWindow --auto && \
+           feh --bg-fill --randomize ~/Pictures/wallpapers/*
 
 workspace $1 output $mainWindow
 workspace $2 output $mainWindow

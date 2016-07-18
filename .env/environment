@@ -46,8 +46,8 @@ alias ffPerso="firefox -p personal -no-remote"
 
 # Work env setup aliases
 alias android-studio="$IDEDIR/android-studio/bin/studio.sh"
-alias intellij="$IDEDIR/idea-IU-145.258.11/bin/idea.sh"
-alias softWork="firefox & scaled-chromium & intellij & genymotion & thunderbird & slack &"
+alias intellij="$IDEDIR/intellij/bin/idea.sh"
+alias softWork="firefox & chromium & intellij & genymotion & thunderbird & slack &"
 function _work_dev {
     # $1 - project absolute directory
     cd $1 && git status
