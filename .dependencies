@@ -5,7 +5,7 @@ i3 dmenu dzen2 feh nemo
 lightdm lightdm-gtk-greeter arandr
 pulseaudio-alsa alsa-utils 
 xfce4-terminal ttf-fira-mono ttf-inconsolata
-zip unzip sudo
+zip unzip sudo xclip
 networkmanager network-manager-applet net-tools
 python-pip python-dbus python-virtualenv python-virtualenvwrapper
 texlive-most
