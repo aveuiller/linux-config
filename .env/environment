@@ -69,6 +69,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias gds='gd --staged'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
