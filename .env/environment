@@ -14,7 +14,7 @@ export SDK_DIR=`workdir "sdk/apisense-android-sdk"`
 export BEE_DIR=`workdir "app/bee-android"`
 export DOC_DIR=`workdir "doc/docs.apisense.com"`
 export PRES_DIR="$HOME/Documents/work/writing/SED/presentations/adt-crowdlab-presentation"
-export SERV_DIR="$HOME/Documents/work/adminsys/servers-deployment"
+export SERV_DIR="$HOME/Documents/work/adminsys/apisense/servers-deployment"
 
 ## Less coloration
 export LESS='-R'
