@@ -49,7 +49,7 @@ alias android-studio="$IDEDIR/android-studio/bin/studio.sh"
 alias intellij="$IDEDIR/intellij/bin/idea.sh"
 alias clion="$IDEDIR/clion/bin/clion.sh"
 alias pycharm="$IDEDIR/pycharm/bin/pycharm.sh"
-alias softWork="firefox & chromium & intellij & genymotion & thunderbird & slack &"
+alias softWork="firefox & chromium & intellij & genymotion & thunderbird & slack & gitter &"
 function _work_dev {
     # $1 - project absolute directory
     cd $1 && git status
