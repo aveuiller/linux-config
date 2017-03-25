@@ -26,7 +26,7 @@ set $5 "3:Work"
 ## Windows binding
 set $mainWindow "eDP1"
 set $secondWindow "VGA1"
-set $thirdWindow "VIRTUAL3"
+set $thirdWindow "VIRTUAL1"
 
 # Start intel virtual outputs to detect thirg screen,
 # configure screens via xrandr, then fill with background
