@@ -36,6 +36,7 @@ export SCALA_HOME="$SOFTDIR/scala/default-scala"
 export PATH="$PATH:$ENVDIR/bin"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Virtualenv wrapper (require python-virtualenvwrapper)
 export WORKON_HOME=~/.virtualenvs
