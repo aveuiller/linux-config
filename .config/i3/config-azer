@@ -31,11 +31,11 @@ set $thirdWindow "VIRTUAL3"
 
 # Start intel virtual outputs to detect thirg screen,
 # configure screens via xrandr, then fill with background
-exec intel-virtual-output && \
-    xrandr --output $mainWindow --primary --pos 0x0 --auto \
-           --output $thirdWindow --right-of $mainWindow --rotate left --auto\
-           --output $secondWindow --right-of $thirdWindow --auto && \
-           feh --bg-fill --randomize ~/Pictures/wallpapers/*
+# exec intel-virtual-output && \
+exec    xrandr --output $mainWindow --primary --pos 0x0 --auto \
+          --output $thirdWindow --right-of $mainWindow --rotate left --auto\
+          --output $secondWindow --right-of $thirdWindow --auto &&\
+          feh --bg-fill --randomize ~/Pictures/wallpapers/*
 
 workspace $1 output $mainWindow
 workspace $2 output $mainWindow
@@ -47,8 +47,8 @@ assign [class="^Firefox$"] →  $1
 assign [class="^chromium-browser$"] →  $1 
 assign [class="gnome-terminal"] →  $2 
 assign [instance="^HipChat$"] →  $3
-assign [class="^Slack$"] →  $4
-assign [title="^Gitter$"] →  $4
+assign [class="^Slack$"] →  $3
+assign [title="^Gitter$"] →  $3
 assign [class="^Thunderbird$"] →  $3
 assign [class="Genymotion"] →  $4
 assign [class="^jetbrains-idea$"] →  $5 
