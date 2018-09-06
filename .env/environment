@@ -47,7 +47,7 @@ alias ffPerso="firefox -p personal -no-remote"
 
 # Work env setup aliases
 alias android-studio="$IDEDIR/android-studio/bin/studio.sh"
-alias intellij="$IDEDIR/intellij/bin/idea.sh"
+#alias intellij="$IDEDIR/intellij/bin/idea.sh"
 alias rubymine="$IDEDIR/rubymine/bin/rubymine.sh"
 alias clion="$IDEDIR/clion/bin/clion.sh"
 alias pycharm="$IDEDIR/pycharm/bin/pycharm.sh"
