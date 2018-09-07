@@ -20,20 +20,20 @@ bindsym $mod+Control+l exec i3lock -c 000000 -i ~/Pictures/i3lock.png
 workspace_layout tabbed
 set $1 "1:Web" 
 set $2 "2:Terminal"  
-set $3 "4:Com"  
-set $4 "5:Misc"  
-set $5 "3:Work"  
+set $3 "3:Com"
+set $4 "4:Misc"
+set $5 "5:Work"
 
 ## Windows binding
 set $mainWindow "eDP1"
-set $secondWindow "VGA1"
+set $secondWindow "DP2"
 set $thirdWindow "VIRTUAL3"
 
 # Start intel virtual outputs to detect thirg screen,
 # configure screens via xrandr, then fill with background
 # exec intel-virtual-output && \
 exec    xrandr --output $mainWindow --primary --pos 0x0 --auto \
-          --output $thirdWindow --right-of $mainWindow --rotate left --auto\
+         # --output $thirdWindow --right-of $mainWindow --rotate left --auto\
           --output $secondWindow --right-of $thirdWindow --auto &&\
           feh --bg-fill --randomize ~/Pictures/wallpapers/*
 

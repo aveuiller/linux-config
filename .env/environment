@@ -1,5 +1,5 @@
 ### Environment Vars:
-gitlabBaseDir="$HOME/Documents/work/dev/apisense"
+gitlabBaseDir="$HOME/Documents/work/dev/scaleway/devcker"
 
 ## Projects
 function workdir {
@@ -7,14 +7,11 @@ function workdir {
     echo $gitlabBaseDir"/"$1
 }
 
-export HIVE_DIR=`workdir "servers/hive"`
-export HONEY_DIR=`workdir "servers/honeycomb"`
-export DASH_DIR=`workdir "servers/dashboard"`
-export SDK_DIR=`workdir "sdk/apisense-android-sdk"`
-export BEE_DIR=`workdir "app/bee-android"`
-export DOC_DIR=`workdir "doc/docs.apisense.com"`
-export PRES_DIR="$HOME/Documents/work/writing/SED/presentations/adt-crowdlab-presentation"
-export SERV_DIR="$HOME/Documents/work/adminsys/apisense/servers-deployment"
+export B_WORLD_DIR=`workdir "projects/ocs-object_store-world_backend"`
+export A_ACCOUNT_DIR=`workdir "projects/api-account"`
+export W_BILLING_DIR=`workdir "projects/worker-billing"`
+export B_BILLING_DIR=`workdir "scw-billing"`
+export DATA_DIR="$HOME/Documents/work/data/"
 
 ## Less coloration
 export LESS='-R'
@@ -46,25 +43,21 @@ source /usr/bin/virtualenvwrapper.sh
 alias ffPerso="firefox -p personal -no-remote"
 
 # Work env setup aliases
-alias android-studio="$IDEDIR/android-studio/bin/studio.sh"
-#alias intellij="$IDEDIR/intellij/bin/idea.sh"
-alias rubymine="$IDEDIR/rubymine/bin/rubymine.sh"
-alias clion="$IDEDIR/clion/bin/clion.sh"
-alias pycharm="$IDEDIR/pycharm/bin/pycharm.sh"
-alias softWork="firefox & chromium & intellij & genymotion & thunderbird & slack & gitter &"
+#alias android-studio="$IDEDIR/android-studio/bin/studio.sh"
+alias intellij="intellij-idea-ultimate-edition"
+#alias rubymine="$IDEDIR/rubymine/bin/rubymine.sh"
+#alias clion="$IDEDIR/clion/bin/clion.sh"
+#alias pycharm="$IDEDIR/pycharm/bin/pycharm.sh"
+alias softWork="firefox & chromium & intellij  & thunderbird & slack & "
 function _work_dev {
     # $1 - project absolute directory
     cd $1 && git status
 }
-alias hive="_work_dev $HIVE_DIR"
-alias honeycomb="_work_dev $HONEY_DIR"
-alias dash="_work_dev $DASH_DIR"
-alias sdk="_work_dev $SDK_DIR"
-alias bee="_work_dev $BEE_DIR"
-alias doc="_work_dev $DOC_DIR"
-alias servers="_work_dev $SERV_DIR"
-alias work="cd $gitlabBaseDir && gws"
-alias prez="cd $PRES_DIR"
+alias world_backend="_work_dev $B_WORLD_DIR"
+alias api_account="_work_dev $A_ACCOUNT_DIR"
+alias worker_billing="_work_dev $W_BILLING_DIR"
+alias scw_billing="_work_dev $B_BILLING_DIR"
+alias devcker="cd $gitlabBaseDir && gws"
 
 ### Aliase:
 alias ll='ls -alF'
@@ -73,6 +66,9 @@ alias l='ls -CF'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias gds='gd --staged'
+alias pytests='python setup.py clean test'
+alias pyinstall='python setup.py build install'
+alias release_project='python setup.py clean --all && python setup.py sdist bdist_egg bdist_wheel upload -v -r devpi'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
