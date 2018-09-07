@@ -4,4 +4,6 @@
 # Pyenv
 .python-version
 
+# Gradle
+.gradletasknamecache
 
