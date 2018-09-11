@@ -10,7 +10,7 @@ function workdir {
 export B_WORLD_DIR=`workdir "projects/ocs-object_store-world_backend"`
 export A_ACCOUNT_DIR=`workdir "projects/api-account"`
 export W_BILLING_DIR=`workdir "projects/worker-billing"`
-export B_BILLING_DIR=`workdir "scw-billing"`
+export B_BILLING_DIR=`workdir "projects/scw-billing"`
 export DATA_DIR="$HOME/Documents/work/data/"
 
 ## Less coloration
