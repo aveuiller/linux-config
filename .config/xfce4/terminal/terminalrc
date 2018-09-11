@@ -28,6 +28,5 @@ MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 ScrollingUnlimited=TRUE
 TabActivityColor=#aaaa00000000
-FontName=Monospace 10
-FontUseSystem=TRUE
+FontName=Monospace 9
 
