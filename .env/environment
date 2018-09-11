@@ -69,6 +69,7 @@ alias gds='gd --staged'
 alias pytests='python setup.py clean test'
 alias pyinstall='python setup.py build install'
 alias release_project='python setup.py clean --all && python setup.py sdist bdist_egg bdist_wheel upload -v -r devpi'
+alias purge_dev_env='find ./ -name "*.pyc" -delete && rm -rf .eggs build/ /tmp/ocs-tests-*'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
