@@ -1,5 +1,6 @@
 # Idea IDEs
 .idea
+*.iml
 
 # Pyenv
 .python-version
@@ -7,3 +8,5 @@
 # Gradle
 .gradletasknamecache
 
+# Python
+.pytest_cache

@@ -22,19 +22,22 @@ export IDEDIR="$SOFTDIR/IDE"
 export ENVDIR="$HOME/.env"
 # See: http://tools.android.com/knownissues/ibus
 export XMODIFIERS="~/Softwares/IDE/android-studio/bin/studio.sh"
+export PASSWORD_STORE_DIR="/home/aveuiller/Documents/work/data/passwords"
 
 # Homes
 export JAVA_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxMetaspaceSize=2G -XX:MetaspaceSize=1G -Xms1G -Xmx2G"
 export JAVA_HOME="/usr/lib/jvm/default"
 export ANDROID_HOME="$SOFTDIR/Android-SDK"
 export SCALA_HOME="$SOFTDIR/scala/default-scala"
+export GOPATH=$(go env GOPATH)
+export GOBIN=$GOPATH/bin
 
 # Path
 export PATH="$PATH:$ENVDIR/bin"
 export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export PATH="$HOME/.cargo/bin:$PATH"
-
+export PATH="$PATH:$HOME/go/bin"
 # Virtualenv wrapper (require python-virtualenvwrapper)
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
@@ -70,6 +73,7 @@ alias pytests='python setup.py clean test'
 alias pyinstall='python setup.py build install'
 alias release_project='python setup.py clean --all && python setup.py sdist bdist_egg bdist_wheel upload -v -r devpi'
 alias purge_dev_env='find ./ -name "*.pyc" -delete && rm -rf .eggs build/ /tmp/ocs-tests-*'
+alias deti='docker exec -ti --env COLUMNS=`tput cols` --env LINES=`tput lines`'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
