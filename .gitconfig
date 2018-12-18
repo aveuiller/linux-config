@@ -1,8 +1,11 @@
 [user]
 	name = Antoine Veuiller
-	email = aveuiller@gmail.com
+    email = aveuiller@online.net
+    #email = aveuiller@gmail.com
 [push]
 	default = simple
 [core]
     editor = vi
 	excludesfile = ~/.gitignore_global
+[credential]
+	helper = store

@@ -71,9 +71,11 @@ alias pbpaste='xclip -selection clipboard -o'
 alias gds='gd --staged'
 alias pytests='python setup.py clean test'
 alias pyinstall='python setup.py build install'
-alias release_project='python setup.py clean --all && python setup.py sdist bdist_egg bdist_wheel upload -v -r devpi'
-alias purge_dev_env='find ./ -name "*.pyc" -delete && rm -rf .eggs build/ /tmp/ocs-tests-*'
+alias purge_dev_env='find ./ -name "*.pyc" -delete && find ./ -name "__pycache__" -delete && rm -rf .eggs build/ dist'
+alias release_project='python setup.py clean --all && purge_dev_env && python setup.py sdist bdist_egg bdist_wheel --universal && twine upload -r devpi dist/*'
+alias purge_db_env='purge_dev_env && rm -rf /tmp/ocs-tests-*'
 alias deti='docker exec -ti --env COLUMNS=`tput cols` --env LINES=`tput lines`'
+alias oio-aws='aws --profile openio --endpoint-url http://163.172.131.62:6007 --no-verify-ssl'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
