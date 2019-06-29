@@ -2,6 +2,10 @@
 .idea
 *.iml
 
+# Kill it before it lays eggs
+.eggs
+*.egg-info
+
 # Pyenv
 .python-version
 
@@ -11,3 +15,13 @@
 # Python
 .pytest_cache
 __pycache__
+pip-wheel-metadata/
+
+.auth
+
+# Gradle local configuration
+gradle.properties
+
+
+# PHPUnit cache files
+*.cache

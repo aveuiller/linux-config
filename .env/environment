@@ -22,7 +22,6 @@ export IDEDIR="$SOFTDIR/IDE"
 export ENVDIR="$HOME/.env"
 # See: http://tools.android.com/knownissues/ibus
 export XMODIFIERS="~/Softwares/IDE/android-studio/bin/studio.sh"
-export PASSWORD_STORE_DIR="/home/aveuiller/Documents/work/data/passwords"
 
 # Homes
 export JAVA_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxMetaspaceSize=2G -XX:MetaspaceSize=1G -Xms1G -Xmx2G"

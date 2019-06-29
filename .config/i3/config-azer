@@ -53,6 +53,7 @@ assign [class="^Thunderbird$"] →  $3
 assign [class="Genymotion"] →  $4
 assign [class="^jetbrains-idea$"] →  $5 
 assign [class="^*android-studio$"] →  $5
+assign [title="^* - phpstorm$"] →  $5
 
 ## Layout & design setting
 hide_edge_borders both
