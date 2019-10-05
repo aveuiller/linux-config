@@ -25,3 +25,8 @@ gradle.properties
 
 # PHPUnit cache files
 *.cache
+
+
+# Clion CMakelist (used in tor)
+CMakeLists.txt
+cmake-build-debug
