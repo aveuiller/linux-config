@@ -41,6 +41,9 @@ export PATH="$PATH:$HOME/go/bin"
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
+export VAULT_SKIP_VERIFY=1
+export VAULT_ADDR="https://vault.sec.internal.scaleway.com"
+
 # firefox profiles
 alias ffPerso="firefox -p personal -no-remote"
 
