@@ -43,7 +43,7 @@ def exec_dzen (rect):
 
     menu_width = 200
     menu_lines = 4
-    font_width = 16
+    font_width = 12
     menu_x = x + width/2 - menu_width/2
     menu_y = y + height/2 - menu_lines * font_width /2
 
@@ -75,7 +75,7 @@ def exec_dzen (rect):
     p = Popen (args, stdin=PIPE, stdout=PIPE)
 
     msg = "^fg(#ff9000)^fn(%(font_header)s) Shutdown options / [Esc] ^fg()" + \
-          "\n%(b_shutdown)s\n%(b_reboot)s\n%(b_logout)s\n%(b_cancel)s"
+          "\n%(b_shutdown)s\n%(b_reboot)s\n%(b_logout)s\n%(b_cancel)s\n"
     msg = msg % locals ()
     p.stdin.write(bytes(msg, 'UTF-8')) # Convert to binary
     p.stdin.close ()
