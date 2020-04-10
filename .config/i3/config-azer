@@ -33,9 +33,9 @@ set $thirdWindow "VIRTUAL3"
 # configure screens via xrandr, then fill with background
 # exec intel-virtual-output && \
 exec    xrandr --output $mainWindow --primary --pos 0x0 --auto \
+          && feh --bg-fill --randomize ~/Pictures/wallpapers/*
         #  --output $thirdWindow --right-of $mainWindow --rotate left --auto\
         #  --output $secondWindow --right-of $thirdWindow --auto \
-          && feh --bg-fill --randomize ~/Pictures/wallpapers/*
 
 workspace $1 output $mainWindow
 workspace $2 output $mainWindow
