@@ -53,7 +53,7 @@ alias intellij="intellij-idea-ultimate-edition"
 #alias rubymine="$IDEDIR/rubymine/bin/rubymine.sh"
 #alias clion="$IDEDIR/clion/bin/clion.sh"
 #alias pycharm="$IDEDIR/pycharm/bin/pycharm.sh"
-alias softWork="firefox & chromium & intellij  & thunderbird & slack & "
+alias softWork="firefox & chromium & intellij  & slack & "
 function _work_dev {
     # $1 - project absolute directory
     cd $1 && git status
