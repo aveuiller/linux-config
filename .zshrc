@@ -53,3 +53,6 @@ export ARCHFLAGS="-arch x86_64"
 
 # Custom environment & aliases
 source ~/.env/environment
+
+# Scaleway CLI autocomplete initialization.
+eval "$(scw autocomplete script shell=zsh)"
