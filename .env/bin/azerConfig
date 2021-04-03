@@ -1,9 +1,7 @@
 #!/bin/bash
-
-I3_DIR=~/.i3
-
 setxkbmap fr 
 
-rm $I3_DIR/config
-ln -s $I3_DIR/config-azer $I3_DIR/config
+cd ~/.config/i3
+cat mapping_azer > config
+cat config_body >> config 
 

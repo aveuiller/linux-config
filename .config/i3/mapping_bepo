@@ -1,0 +1,45 @@
+# mod & mod + shift
+set $up      l
+# mod & mod + shift
+set $left    s
+# mod & mod + shift
+set $right   n
+# mod & mod + shift
+set $down    r
+
+# mod
+set $stack   a
+# mod
+set $tabbed  u
+# mod
+set $split   i
+
+# mod
+set $lock    t
+# mod & mod + shift
+ret $work    x
+
+# mod & mod + shift
+set $exec    d
+# mod
+set $kill    q
+
+# mod
+set $hsplit  h
+# mod
+set $vsplit  v
+
+# mod
+set $fscreen f
+
+# mod & mod + shift
+set $reload  c
+# mod & mod + shift
+set $restart w
+# mod & mod + shift
+set $exit    e
+
+# mod
+set $resize  w
+# mod
+set $float   c

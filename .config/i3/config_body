@@ -5,47 +5,57 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # Custom config 
+
 ## Startup daemons and softwares
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
-exec --no-startup-id feh --bg-scale --randomize ~/Pictures/wallpapers/*
+exec --no-startup-id blueman-applet
+#Polybar
+exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
 
 ## bindings
-bindsym $mod+shift+w exec softWork
-bindsym $mod+Control+l exec i3lock -c 000000 -i ~/Pictures/i3lock.png
+bindsym $mod+shift+$work exec softWork
+bindsym $mod+Control+$lock exec i3lock -c 000000 -i ~/Pictures/i3lock.png
 
 ## Workspace assignements
 workspace_layout tabbed
 set $1 "1:Web" 
 set $2 "2:Terminal"  
-set $3 "4:Com"  
-set $4 "5:Misc"  
-set $5 "3:Work"  
+set $3 "3:Com"
+set $4 "4:Misc"
+set $5 "5:Work"
 
 ## Windows binding
-set $mainWindow "LVDS"
-set $secondWindow "VGA-0"
-exec xrandr --output $mainWindow --mode 1600x900
-exec xrandr --output $secondWindow --auto --left-of $mainWindow
+set $mainWindow "$MAINSCREEN"
+set $secondWindow "DP2"
+set $thirdWindow "VIRTUAL3"
+
+# Start intel virtual outputs to detect thirg screen,
+# configure screens via xrandr, then fill with background
+# exec intel-virtual-output && \
+exec    xrandr --output $mainWindow --primary --pos 0x0 --auto \
+          && feh --bg-fill --randomize ~/Pictures/wallpapers/*
+        #  --output $thirdWindow --right-of $mainWindow --rotate left --auto\
+        #  --output $secondWindow --right-of $thirdWindow --auto \
 
 workspace $1 output $mainWindow
 workspace $2 output $mainWindow
 workspace $3 output $mainWindow
-workspace $4 output $mainWindow
+workspace $4 output $thirdWindow
 workspace $5 output $secondWindow
 
 assign [class="^Firefox$"] →  $1 
-assign [class="^chromium$"] →  $1 
+assign [class="^chromium-browser$"] →  $1 
 assign [class="gnome-terminal"] →  $2 
 assign [instance="^HipChat$"] →  $3
-assign [class="^Slack$"] →  $4
-assign [title="^Gitter$"] →  $4
+assign [class="^Slack$"] →  $3
+assign [title="^Gitter$"] →  $3
 assign [class="^Thunderbird$"] →  $3
 assign [class="Genymotion"] →  $4
 assign [class="^jetbrains-idea$"] →  $5 
-assign [class="^jetbrains-android-studio$"] →  $5
+assign [class="^*android-studio$"] →  $5
+assign [title="^* - phpstorm$"] →  $5
 
 ## Layout & design setting
 hide_edge_borders both
@@ -60,30 +70,37 @@ workspace_auto_back_and_forth yes
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+### Style 
+
+# color defines for zenburn styled i3
+set $bg     #333333
+set $ac     #111111
+set $tx     #EEEEEE
+set $ia     #777777
+set $rd     #331111
+
+# set some nice colors      border     background  text
+client.focused              $ac        $ac         $tx
+client.unfocused            $bg        $bg         $ia
+client.focused_inactive     $bg        $bg         $ia
+client.urgent               $rd        $rd         $tx
+
+# font pango:DejaVu Sans Mono 8
+font pango:Open Sans Semibold 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $od
+floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+$kill kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec ~/.i3/dmenu_run_aliases
-#bindsym $mod+d exec i3-dmenu-desktop
+# bindsym $mod+d exec ~/.config/i3/dmenu_run_aliases
+bindsym $mod+$exec exec rofi -show run
+bindsym $mod+Shift+$exec exec rofi -show window
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -91,10 +108,10 @@ bindsym $mod+d exec ~/.i3/dmenu_run_aliases
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+s focus left
-bindsym $mod+r focus down
-bindsym $mod+l focus up
-bindsym $mod+n focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -103,10 +120,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+s move left
-bindsym $mod+Shift+r move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+n move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -115,18 +132,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+$hsplit split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+$vsplit split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+$fscreen fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+a layout stacking
-bindsym $mod+u layout tabbed
-bindsym $mod+i layout toggle split
+bindsym $mod+$stack layout stacking
+bindsym $mod+$tabbed layout tabbed
+bindsym $mod+$split layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -135,7 +152,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+q focus parent
+#bindsym $mod+q focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -165,40 +182,31 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+$reload reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+$restart restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "~/.i3/i3-exit" 
-
-#"~/.i3/i3-exit" 
-#"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+$exit exec ~/.config/i3/i3-exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym s resize shrink width 10 px or 10 ppt
-        bindsym r resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym n resize grow width 10 px or 10 ppt
+        bindsym $left  resize shrink width  10 px or 10 ppt
+        bindsym $down  resize grow   height 10 px or 10 ppt
+        bindsym $up    resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow   width  10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left   resize shrink width  10 px or 10 ppt
+        bindsym Down   resize grow   height 10 px or 10 ppt
+        bindsym Up     resize shrink height 10 px or 10 ppt
+        bindsym Right  resize grow   width  10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+$resize mode "resize"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
@@ -206,8 +214,8 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound vo
 bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -215,13 +223,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Picture in picture
+bindsym $mod+$float exec "i3-msg 'floating toggle; sticky toggle; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 250px;move position 10px 10px;'"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        mode dock
-        position top
-        status_command python ~/.i3/i3-status.py
-        tray_output $mainWindow
-        strip_workspace_numbers yes
-}
+
