@@ -4,7 +4,7 @@
 git clone https://github.com/srsudar/eg
 git clone https://github.com/robbyrussell/oh-my-zsh
 
-# Android SDK
-sdkfile="android-sdk_r24.3.2-linux.tgz"
-curl http://dl.google.com/android/$sdkfile -O && tar xaf $sdkfile android-sdk-linux && rm $sdkfile
-
+# AUR projects
+mkdir build
+git clone https://aur.archlinux.org/nerd-fonts-complete.git build/nerd-fonts-complete
+git clone https://aur.archlinux.org/polybar.git build/polybar

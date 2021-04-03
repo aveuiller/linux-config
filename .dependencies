@@ -2,10 +2,11 @@ zsh
 gcc
 emacs scrot evince
 firefox chromium
-i3 dmenu dzen2 feh nemo
+i3 nemo
+dzen2 rofi termite dunst 
 xorg-server
 lightdm lightdm-gtk-greeter arandr
-pulseaudio-alsa alsa-utils 
+pulseaudio-alsa alsa-utils playerctl
 xfce4-terminal ttf-fira-mono ttf-inconsolata
 zip unzip sudo xclip
 networkmanager network-manager-applet net-tools

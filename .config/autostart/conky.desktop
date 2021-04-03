@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Conky
-Exec=ruby /home/antoine/.conky/starter.rb
-Comment=Custom conky desktop
