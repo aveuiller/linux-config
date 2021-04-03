@@ -1,18 +1,4 @@
 ### Environment Vars:
-gitlabBaseDir="$HOME/Documents/work/dev/scaleway/devcker"
-
-## Projects
-function workdir {
-    # $1 - project directory
-    echo $gitlabBaseDir"/"$1
-}
-
-export B_WORLD_DIR=`workdir "projects/ocs-object_store-world_backend"`
-export A_ACCOUNT_DIR=`workdir "projects/api-account"`
-export W_BILLING_DIR=`workdir "projects/worker-billing"`
-export B_BILLING_DIR=`workdir "projects/scw-billing"`
-export DATA_DIR="$HOME/Documents/work/data/"
-
 ## Less coloration
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
@@ -21,7 +7,7 @@ export SOFTDIR="$HOME/Software"
 export IDEDIR="$SOFTDIR/IDE"
 export ENVDIR="$HOME/.env"
 # See: http://tools.android.com/knownissues/ibus
-export XMODIFIERS="~/Softwares/IDE/android-studio/bin/studio.sh"
+export XMODIFIERS="$IDEDIR/android-studio/bin/studio.sh"
 
 # Homes
 export JAVA_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxMetaspaceSize=2G -XX:MetaspaceSize=1G -Xms1G -Xmx2G"
@@ -41,28 +27,8 @@ export PATH="$PATH:$HOME/go/bin"
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
-export VAULT_SKIP_VERIFY=1
-export VAULT_ADDR="https://vault.sec.internal.scaleway.com"
-
-# firefox profiles
-alias ffPerso="firefox -p personal -no-remote"
-
 # Work env setup aliases
-#alias android-studio="$IDEDIR/android-studio/bin/studio.sh"
-alias intellij="intellij-idea-ultimate-edition"
-#alias rubymine="$IDEDIR/rubymine/bin/rubymine.sh"
-#alias clion="$IDEDIR/clion/bin/clion.sh"
-#alias pycharm="$IDEDIR/pycharm/bin/pycharm.sh"
 alias softWork="firefox & chromium & intellij  & slack & "
-function _work_dev {
-    # $1 - project absolute directory
-    cd $1 && git status
-}
-alias world_backend="_work_dev $B_WORLD_DIR"
-alias api_account="_work_dev $A_ACCOUNT_DIR"
-alias worker_billing="_work_dev $W_BILLING_DIR"
-alias scw_billing="_work_dev $B_BILLING_DIR"
-alias devcker="cd $gitlabBaseDir && gws"
 
 ### Aliase:
 alias ll='ls -alF'
@@ -73,11 +39,9 @@ alias pbpaste='xclip -selection clipboard -o'
 alias gds='gd --staged'
 alias pytests='python setup.py clean test'
 alias pyinstall='python setup.py build install'
-alias purge_dev_env='find ./ -name "*.pyc" -delete && find ./ -name "__pycache__" -delete && rm -rf .eggs build/ dist'
-alias release_project='python setup.py clean --all && purge_dev_env && python setup.py sdist bdist_egg bdist_wheel --universal && twine upload -r devpi dist/*'
-alias purge_db_env='purge_dev_env && rm -rf /tmp/ocs-tests-*'
+alias py_purge_dev_env='find ./ -name "*.pyc" -delete && find ./ -name "__pycache__" -delete && rm -rf .eggs build/ dist'
+alias py_release_project='python setup.py clean --all && purge_dev_env && python setup.py sdist bdist_egg bdist_wheel --universal && twine upload -r devpi dist/*'
 alias deti='docker exec -ti --env COLUMNS=`tput cols` --env LINES=`tput lines`'
-alias oio-aws='aws --profile openio --endpoint-url http://163.172.131.62:6007 --no-verify-ssl'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -85,5 +49,3 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 eval "$(pyenv init -)"
 
-# Other initializers inclusion
-#source ~/.env/jenv.init
