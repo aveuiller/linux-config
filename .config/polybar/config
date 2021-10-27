@@ -154,7 +154,7 @@ click-left = "nemo > /dev/null 2>&1 &"
 ;Network
 [module/wifi]
 type = internal/network
-interface = wlp4s0
+interface = wlp5s0
 format-connected =  <ramp-signal>
 format-connected-padding = 2
 format-connected-foreground = ${colors.menucol-green}
