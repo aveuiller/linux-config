@@ -5,7 +5,7 @@ opensansbold = DroidSans:Bold:size=8
 opensansboldhigh = DroidSans:Bold:size=11
 opensansital = DroidSans:Italic:size=9
 xos = xos4 Terminus:size=14;0
-nerd = TerminessTTF Nerd Font:size=12;0
+nerd = Symbols Nerd Font:size=12;0
 
 
 [colors]
@@ -266,7 +266,7 @@ content-font = 7
 content-padding = 2
 content-foreground = ${colors.menucol-lightblue}
 content-underline = ${colors.menucol-lightblue}
-click-left = sh ~/.config/i3/i3-exit
+click-left = python ~/.config/i3/i3-exit
 
 
 ;Battery Indicator
@@ -335,7 +335,7 @@ format-underline = ${colors.menucol-purple}
 format-prefix = 
 format-prefix-foreground = ${colors.menucol-purple}
 
-label = " %gb_used%"
+label = " %gb_used% / %gb_total%"
 label-font = 3
 
 
