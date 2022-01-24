@@ -55,4 +55,6 @@ export ARCHFLAGS="-arch x86_64"
 source ~/.env/environment
 
 # Scaleway CLI autocomplete initialization.
-eval "$(scw autocomplete script shell=zsh)"
+# eval "$(scw autocomplete script shell=zsh)"
+
+export ICAROOT="/home/antoine/Software/ICAClient"
