@@ -339,19 +339,18 @@ label = " %gb_used% / %gb_total%"
 label-font = 3
 
 
-[module/memoryswap]
-type = internal/memory
-interval = 3
-format = <label>
-format-padding = 2
-format-underline = ${colors.menucol-pink}
-
-format-prefix = 
-format-prefix-foreground = ${colors.menucol-pink}
-
-label = " %gb_swap_used%"
-label-font = 3
-
+;[module/memoryswap]
+;type = internal/memory
+;interval = 3
+;format = <label>
+;format-padding = 2
+;format-underline = ${colors.menucol-pink}
+;
+;format-prefix = 
+;format-prefix-foreground = ${colors.menucol-pink}
+;
+;label = " %gb_swap_used%"
+;label-font = 3
 
 [module/temperature]
 type = internal/temperature

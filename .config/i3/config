@@ -54,7 +54,7 @@ set $float   c
 
 ## Startup daemons and softwares
 exec --no-startup-id nm-applet
-exec --no-startup-id dropbox start
+# exec --no-startup-id dropbox start
 exec --no-startup-id blueman-applet
 #Polybar
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh

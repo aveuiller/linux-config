@@ -47,7 +47,7 @@ plugins=(git docker docker-compose adb emoji gradle pyenv)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/antoine/.local/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
