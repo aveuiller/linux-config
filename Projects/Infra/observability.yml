@@ -1,0 +1,58 @@
+---
+version: '3.9'
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - prom_grafana
+    links:
+      - "prometheus:prometheus"
+    configs:
+      - source: grafana_config
+        target: /etc/grafana/provision/datasources/datasource.yml
+  prometheus:
+    image: prom/prometheus:latest
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - "9090:9090"
+    volumes:
+      - prom_data:/prometheus
+    networks:
+      - prom_grafana
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    configs:
+      - source: prometheus_config
+        target: /etc/prometheus/prometheus.yml
+
+networks:
+  prom_grafana: {}
+
+volumes:
+  grafana_data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/antoine/Projects/Infra/Grafana'
+  prom_data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/antoine/Projects/Infra/Prometheus'
+
+configs:
+  grafana_config:
+    file: ./config/grafana.yml
+  prometheus_config:
+    file: ./config/prometheus.yml
