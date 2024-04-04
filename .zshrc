@@ -58,3 +58,7 @@ source ~/.env/environment
 # eval "$(scw autocomplete script shell=zsh)"
 
 export ICAROOT="/home/antoine/Software/ICAClient"
+
+# Timoni autocomplete
+command -v timoni >/dev/null && . <(timoni completion zsh) && compdef _timoni timoni
+
