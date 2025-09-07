@@ -42,7 +42,7 @@ ZSH_THEME="dpoggi"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose adb emoji gradle pyenv)
+plugins=(git docker docker-compose emoji zsh-autosuggestions zsh-syntax-highlighting zsh-bat)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,4 +63,5 @@ export ICAROOT="/home/antoine/Software/ICAClient"
 command -v timoni >/dev/null && . <(timoni completion zsh) && compdef _timoni timoni
 
 # Fix PulseAudio missing DBUS
-export $(dbus-launch)
+#export $(dbus-launch)
+#eval "$(zellij setup --generate-auto-start zsh)"

@@ -5,8 +5,9 @@
 [push]
 	default = simple
 [core]
-    editor = vi
+	editor = vi
 	excludesfile = ~/.gitignore_global
+	pager = less
 [credential]
 	helper = store
 [pull]
