@@ -1,0 +1,44 @@
+include ~/.config/sway/configs/colorscheme
+
+# Assign windows to workspaces
+assign [app_id="firefox"] workspace number 1
+assign [class="jetbrains-*"] workspace number 3
+
+# Border config
+smart_borders on
+default_border pixel 1
+default_floating_border pixel 1 
+default_orientation auto
+
+# Gaps config
+gaps inner 3
+smart_gaps on
+
+# Enable thinkPad touchpad
+#input "1739:0:Synaptics_TM3276-022" {
+#    dwt enabled
+#    tap enabled
+#    middle_emulation enabled
+#}
+
+# Enable multiple keyboard layouts
+input * xkb_layout "us, fr"
+
+# Status bar
+bar {
+     swaybar_command waybar
+}
+
+# Set cursor theme
+seat * xcursor_theme Simp1e-Tokyo-Night 30
+
+# Property Name          Border        BG            Text       Indicator   Child Border
+client.focused           $dark-blue    $dark-blue    $fg-color  $yellow     $blue
+client.focused_inactive  $dark-purple  $dark-purple  $fg-color  $bg-color   $bg-color
+client.unfocused         $dark-blue    $bg-color     $fg-color  $bg-color   $bg-color
+client.urgent            $red          $red          $bg-color  $red        $red
+client.placeholder       $bg-color     $bg-color     $fg-color  $bg-color   $bg-color
+client.background        $fg-color
+
+# Font
+font pango:JetBrainsMono NFP Bold 10
