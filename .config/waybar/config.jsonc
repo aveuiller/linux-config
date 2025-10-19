@@ -7,8 +7,7 @@
     "modules-left": [
       "sway/mode",
       "sway/workspaces",
-      "sway/window",
-      "mpd"
+      "sway/window"
     ],
     "modules-center": [
       "idle_inhibitor",

@@ -12,13 +12,13 @@
     bindsym $mod+Shift+f exec $browser
 
     # Start file manager
-    bindsym $mod+e exec $file_manager
+    #bindsym $mod+e exec $file_manager
 
     # Start neovim
     #bindsym $mod+n exec $term $editor
 
-    # Change keyboard layout 
-    bindsym $mod+z exec swaymsg input type:keyboard xkb_switch_layout next
+    # Change keyoard layout 
+    bindsym $mod+x exec swaymsg input type:keyboard xkb_switch_layout next
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -120,9 +120,9 @@
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+Shift+s layout stacking
-    bindsym $mod+Shift+w layout tabbed
-    bindsym $mod+Shift+e layout toggle 
+    bindsym $mod+q layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle 
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen toggle 
