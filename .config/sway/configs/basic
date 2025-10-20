@@ -11,8 +11,8 @@ default_floating_border pixel 1
 default_orientation auto
 
 # Gaps config
-gaps inner 3
-smart_gaps on
+# gaps none
+smart_gaps off
 
 # Enable thinkPad touchpad
 #input "1739:0:Synaptics_TM3276-022" {
