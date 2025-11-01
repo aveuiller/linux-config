@@ -94,6 +94,10 @@
         {
           "label": "",
           "command": "kooha"
+        },
+        {
+          "label": "󰹑",
+          "command": "flameshot gui --path ~/Pictures/Screenshots"
         }
       ]
     }
