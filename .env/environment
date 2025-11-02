@@ -8,6 +8,8 @@ export IDEDIR="$SOFTDIR/IDE"
 export ENVDIR="$HOME/.env"
 # See: http://tools.android.com/knownissues/ibus
 export XMODIFIERS="$IDEDIR/android-studio/bin/studio.sh"
+# fix java gui apps on wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Homes
 export JAVA_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxMetaspaceSize=2G -XX:MetaspaceSize=1G -Xms1G -Xmx2G"
