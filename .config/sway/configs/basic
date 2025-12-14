@@ -1,8 +1,8 @@
 include ~/.config/sway/configs/colorscheme
 
 # Assign windows to workspaces
-assign [app_id="firefox"] workspace number 1
-assign [class="jetbrains-*"] workspace number 3
+#assign [app_id="firefox"] workspace number 1
+# assign [class="jetbrains-*"] workspace number 3
 
 # Border config
 smart_borders on

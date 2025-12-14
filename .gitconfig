@@ -1,7 +1,7 @@
 [user]
     name = Antoine Veuiller
-    email = aveuiller@online.net
-    #email = aveuiller@gmail.com
+    #email = aveuiller@online.net
+    email = aveuiller@gmail.com
 [push]
 	default = simple
 [core]
@@ -12,3 +12,8 @@
 	helper = store
 [pull]
 	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

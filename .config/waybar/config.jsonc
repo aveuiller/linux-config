@@ -33,11 +33,6 @@
         "2": "2: Term",
         "3": "3: Work",
       },
-      "persistent-workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-      },
     },
     "keyboard-state": {
       "numlock": true,
