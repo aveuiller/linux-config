@@ -30,6 +30,9 @@ export PATH="$PATH:$HOME/.local/go/bin"
 # Monitor
 #export MAINSCREEN=`xrandr | grep "\sconnected" -m1 | cut -f1 -d' '`
 
+# Prevents segfault on NPU usage
+export ZE_ENABLE_VALIDATION_LAYER=0
+
 # Work env setup aliases
 alias softWork="firefox & chromium & intellij  & slack & "
 
