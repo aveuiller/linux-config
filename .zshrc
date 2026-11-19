@@ -65,3 +65,6 @@ command -v timoni >/dev/null && . <(timoni completion zsh) && compdef _timoni ti
 # Fix PulseAudio missing DBUS
 #export $(dbus-launch)
 #eval "$(zellij setup --generate-auto-start zsh)"
+
+# bun completions
+[ -s "/home/antoine/.bun/_bun" ] && source "/home/antoine/.bun/_bun"

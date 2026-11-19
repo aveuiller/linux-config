@@ -14,6 +14,7 @@
       "clock"
     ],
     "modules-right": [
+      "custom/tailscale",
       "cpu",
       "memory",
       "temperature",
@@ -174,24 +175,40 @@
       "on-click": "hyprctl switchxkblayout your-keyboard-name-here next"
     },
     "custom/notification": {
-    "tooltip": true,
-    "format": "<span size='16pt'>{icon}</span>",
-    "format-icons": {
-      "notification": "󱅫",
-      "none": "󰂜",
-      "dnd-notification": "󰂠",
-      "dnd-none": "󰪓",
-      "inhibited-notification": "󰂛",
-      "inhibited-none": "󰪑",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
+      "tooltip": true,
+      "format": "<span size='16pt'>{icon}</span>",
+      "format-icons": {
+        "notification": "󱅫",
+        "none": "󰂜",
+        "dnd-notification": "󰂠",
+        "dnd-none": "󰪓",
+        "inhibited-notification": "󰂛",
+        "inhibited-none": "󰪑",
+        "dnd-inhibited-notification": "󰂛",
+        "dnd-inhibited-none": "󰪑"
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
     },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "custom/tailscale" : {
+      "exec": "~/.config/waybar/waybar-tailscale/waybar-tailscale.sh --status 'ipv4'",
+      "on-click": "exec ~/.config/waybar/waybar-tailscale/waybar-tailscale.sh --toggle",
+      "on-click-right": "exec ~/.config/waybar/waybar-tailscale/waybar-tailscale.sh --select-exit-node",
+      "exec-on-event": true,
+      "format": "         ",
+      // uncomment if you want icons, don't use with tailscale.css
+      "format": "VPN {icon}",
+      "format-icons": {
+        "connected": "󱠾 󰕥 ",
+        "stopped": "󱠾  "
+      },
+      "tooltip": true,
+      "return-type": "json",
+      "interval": 1
     },
   }
 ]

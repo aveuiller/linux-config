@@ -2,7 +2,7 @@
 #    resolution 1920x1080 pos 0,0
 #}
 
-output "*" bg "$(find $HOME/Pictures/Wallpapers/*.png | shuf -n 1)" fill
+output "*" bg "$(find $HOME/Media/Pictures/Wallpapers/*.png | shuf -n 1)" fill
 
 # output "*" bg $HOME/Pictures/Wallpapers/disco.png fill
 

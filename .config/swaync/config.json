@@ -98,6 +98,17 @@
         {
           "label": "󰹑",
           "command": "flameshot gui --path ~/Pictures/Screenshots"
+        },
+        {
+          "label": "󰦝",
+          "type": "toggle",
+          "command": "~/.config/waybar/waybar-tailscale/waybar-tailscale.sh --toggle",
+          "update-command": "sh -c 'tailscale status --json | grep -Eq \"BackendState.*Running\" && echo true || echo false'"
+        },
+        {
+          "label": "󰑩",
+          "type": "normal",
+          "command": "~/.config/waybar/waybar-tailscale/waybar-tailscale.sh --select-exit-node"
         }
       ]
     }

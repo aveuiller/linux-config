@@ -26,6 +26,7 @@
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
+    bindsym $mod+s sticky toggle
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
